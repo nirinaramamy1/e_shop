@@ -21,9 +21,9 @@ class Description extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               alignment: Alignment.center,
-              child: Text(
-                description,
-                style: const TextStyle(
+              child: const Text(
+                "Description",
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 16,
@@ -48,9 +48,9 @@ class Description extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         Text(
-          "description",
+          description,
           style: const TextStyle(
             fontSize: 16,
             color: Colors.grey,

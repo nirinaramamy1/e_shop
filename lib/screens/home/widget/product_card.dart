@@ -1,3 +1,4 @@
+import 'package:e_shop/provider/favorite_provider.dart';
 import 'package:e_shop/screens/detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:e_shop/constant.dart';
@@ -9,6 +10,8 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -29,7 +32,7 @@ class ProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 Center(
                   child: Hero(
                     tag: product.image,
@@ -80,6 +83,35 @@ class ProductCard extends StatelessWidget {
                   ],
                 )
               ],
+            ),
+          ),
+          // for favorite icon
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: kprimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    provider.toggleFavorite(product);
+                  },
+                  child: Icon(
+                    provider.isExist(product)
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ),
             ),
           )
         ],

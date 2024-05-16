@@ -30,7 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
         child: Column(
           children: [
             // for back button share and favorite
-            const DetailAppBar(),
+            DetailAppBar(product: widget.product),
             // for detail image slider
             CustomImageSlider(
               image: widget.product.image,
@@ -73,7 +73,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 left: 20,
                 right: 20,
                 top: 20,
-                bottom: 100,
+                // bottom: 200,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
