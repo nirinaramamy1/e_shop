@@ -103,6 +103,7 @@ class _CartScreenState extends State<CartScreen> {
                                   Text(
                                     cartItems.title,
                                     style: const TextStyle(
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16,
                                     ),
@@ -110,19 +111,18 @@ class _CartScreenState extends State<CartScreen> {
                                   const SizedBox(width: 5),
                                   Text(
                                     cartItems.category,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14,
-                                      color: Colors.grey.shade400,
+                                      color: Colors.grey,
                                     ),
                                   ),
                                   const SizedBox(width: 5),
                                   Text(
                                     "\$${cartItems.price}",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14,
-                                      color: Colors.grey.shade400,
                                     ),
                                   ),
                                 ],
